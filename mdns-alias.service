@@ -1,0 +1,15 @@
+[Unit]
+Description=mDNS Alias publisher
+After=network.target avahi-daemon.service
+
+[Service]
+User=pi
+Type=simple
+WorkingDirectory=/home/pi
+ExecStart=/home/pi/mdns-alias/publish.sh
+Restart=no
+PrivateTmp=true
+PrivateDevices=true
+
+[Install]
+WantedBy=multi-user.target
