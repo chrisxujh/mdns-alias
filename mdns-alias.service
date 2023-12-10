@@ -1,6 +1,7 @@
 [Unit]
 Description=mDNS Alias publisher
-After=network.target avahi-daemon.service
+After=network-online.target avahi-daemon.service
+Wants=network-online.target
 
 [Service]
 User=pi
